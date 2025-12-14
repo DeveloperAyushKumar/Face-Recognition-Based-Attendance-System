@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="420" viewBox="0 0 900 420">
+  <style>
+    .box { fill: #F97316; rx: 16; }
+    .box2 { fill: #FDBA74; rx: 16; }
+    .text { fill: white; font-size: 14px; font-family: Arial, sans-serif; text-anchor: middle; }
+    .sub { fill: white; font-size: 12px; font-family: Arial, sans-serif; text-anchor: middle; opacity: 0.9; }
+    .arrow { stroke: #000; stroke-width: 2.5; fill: none; marker-end: url(#arrowhead); }
+  </style>
+
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7"
+      refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#000"/>
+    </marker>
+  </defs>
+
+  <!-- Camera -->
+  <rect x="30" y="160" width="130" height="70" class="box"/>
+  <text x="95" y="195" class="text">Camera</text>
+  <text x="95" y="215" class="sub">Image Capture</text>
+
+  <!-- Frontend -->
+  <rect x="200" y="110" width="180" height="140" class="box"/>
+  <text x="290" y="150" class="text">Frontend</text>
+  <text x="290" y="175" class="sub">Student Interface</text>
+  <text x="290" y="195" class="sub">Administrator Interface</text>
+  <text x="290" y="215" class="sub">Role-Based Access</text>
+
+  <!-- Backend -->
+  <rect x="420" y="130" width="180" height="100" class="box"/>
+  <text x="510" y="165" class="text">Backend (Node.js)</text>
+  <text x="510" y="190" class="sub">Auth &amp; Attendance</text>
+  <text x="510" y="210" class="sub">REST APIs</text>
+
+  <!-- ML Service -->
+  <rect x="650" y="110" width="200" height="140" class="box"/>
+  <text x="750" y="145" class="text">ML Service (Python)</text>
+  <text x="750" y="170" class="sub">MTCNN – Detection</text>
+  <text x="750" y="190" class="sub">FaceNet – Embeddings</text>
+  <text x="750" y="210" class="sub">Recognition Engine</text>
+
+  <!-- Database -->
+  <rect x="650" y="280" width="200" height="80" class="box2"/>
+  <text x="750" y="315" class="text" fill="black">Database</text>
+  <text x="750" y="335" class="sub" fill="black">Embeddings &amp; Records</text>
+
+  <!-- Arrows -->
+  <line x1="160" y1="195" x2="200" y2="195" class="arrow"/>
+  <line x1="380" y1="180" x2="420" y2="180" class="arrow"/>
+  <line x1="600" y1="180" x2="650" y2="180" class="arrow"/>
+  <line x1="750" y1="250" x2="750" y2="280" class="arrow"/>
+  <line x1="650" y1="320" x2="600" y2="220" class="arrow"/>
+</svg>

@@ -6,7 +6,7 @@ from numpy.linalg import norm
 import os
 
 EMBED_DIR = "embeddings"
-THRESHOLD = 0.8
+THRESHOLD = 1.6
 
 os.makedirs(EMBED_DIR, exist_ok=True)
 
@@ -28,13 +28,20 @@ def load_database():
         db[sid] = np.load(f"{EMBED_DIR}/{f}")
     return db
 
-def match_face(embedding, database):
-    best_id, best_dist = None, float("inf")
-    for sid, embs in database.items():
-        d = np.mean([norm(embedding - e) for e in embs])
-        if d < best_dist:
-            best_dist, best_id = d, sid
 
-    if best_dist < THRESHOLD:
+def match_face(embedding, database):
+    best_id = "Unknown"
+    best_dist = float("inf")
+
+    for sid, embs in database.items():
+        dists = [norm(embedding - e) for e in embs]
+        dist = float(np.mean(dists))
+
+        if dist < best_dist:
+            best_dist = dist
+            best_id = sid
+
+    if best_dist <= THRESHOLD:
         return best_id, best_dist
+
     return "Unknown", best_dist
